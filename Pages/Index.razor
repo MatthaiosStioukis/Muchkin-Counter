@@ -9,3 +9,57 @@
         </div>
     </div>
 </div>
+<form>
+<div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">Name: </span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" @bind="name">
+</div>
+
+<div class="input-group flex-nowrap">
+  <span class="input-group-text" id="addon-wrapping">Gender: </span>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" @bind="gender">
+</div>
+
+<div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping">Level: </span>
+    <input type="number" id="number"  @bind="level"/>
+</div>
+
+<div class="input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping">Gear: </span>
+    <input type="number" id="number"  @bind="gear"/>
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<h1>@newPlayer.name</h1>
+@code 
+{
+   
+    public string newPlayer = "someone";
+    string name = "Player Name";
+    string gender = "Man";
+    int level = 1;
+    int gear = 1;
+
+    public class Player {
+        public string name;
+        public string gender;
+        public int level;
+        public int gear;
+    }
+    
+    public string CreationPlayer(){
+      Player newPlayer = new Player();
+    newPlayer.name = name;
+    newPlayer.gender = gender;
+    newPlayer.level = level;
+    newPlayer.gear = gear;
+    return newPlayer;
+    }
+    
+
+    
+    
+    
+}
